@@ -1,0 +1,23 @@
+{
+  "name": "Machship Custom Charge",
+  "version": "0.0",
+  "description": "Auto calcuate custom extra charges!",
+  "permissions": ["activeTab", "declarativeContent", "storage", "*://*.machship.com/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "optional_permissions": [ "activeTab" ],
+  "options_page": "options.html",
+  "page_action": {
+
+  },
+  "content_scripts": [
+   {
+     "matches": [ "*://*.machship.com/*" ],
+     "js": ["start.js"],
+     "run_at": "document_start"
+   }
+  ],
+  "manifest_version": 2
+}
